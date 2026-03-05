@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHG Consultoria | Engenharia, Segurança e Meio Ambiente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        :root {
+            --brand-color: #C2CE2E;
+            --brand-black: #000000;
+        }
+        .bg-brand { background-color: var(--brand-color); }
+        .text-brand { color: var(--brand-color); }
+        .border-brand { border-color: var(--brand-color); }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-color);
+            box-shadow: 0 10px 20px -5px rgba(194, 206, 46, 0.2);
+        }
+
+        /* Estilo para fundir o logo no fundo PRETO (Menu e Footer) */
+        .logo-blend-dark {
+            height: 75px; 
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            mix-blend-mode: screen; /* Faz o fundo escuro do logo sumir no preto */
+            filter: contrast(1.2) brightness(1.1);
+        }
+
+        /* Estilo para fundir o logo no fundo VERDE (Painel de Contatos) */
+        .logo-blend-brand {
+            height: 100px;
+            width: auto;
+            mix-blend-mode: multiply; /* Faz o fundo claro do logo sumir no verde */
+            filter: contrast(1.1) saturate(1.2);
+            opacity: 0.9;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-800">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-black backdrop-blur-sm border-b border-brand/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center">
+                    <!-- Logo fundido no fundo preto -->
+                    <img src="https://lh3.googleusercontent.com/d/1lOWXl_pNFLY1TwWmv_eEAArttPSvMIHW" alt="LHG Consultoria" class="logo-blend-dark">
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-white hover:text-brand transition text-sm font-bold uppercase tracking-widest">Início</a>
+                    <a href="#empresa" class="text-white hover:text-brand transition text-sm font-bold uppercase tracking-widest">Empresa</a>
+                    <a href="#servicos" class="text-white hover:text-brand transition text-sm font-bold uppercase tracking-widest">Serviços</a>
+                    <a href="#treinamentos" class="text-white hover:text-brand transition text-sm font-bold uppercase tracking-widest">Treinamentos</a>
+                    <a href="#contato" class="bg-brand text-black px-6 py-2 rounded font-black hover:brightness-110 transition uppercase text-sm">Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center pt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-3xl">
+                <span class="text-brand font-black tracking-[0.3em] uppercase text-sm mb-4 block">Desde 2020 a construir parcerias</span>
+                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight uppercase mb-6">
+                    Engenharia de <span class="text-brand">Segurança</span> & Meio Ambiente
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl border-l-4 border-brand pl-6">
+                    Especialistas em diagnóstico de processos produtivos, saúde e segurança do trabalhador. Trabalho sério, competente e eficaz para o seu negócio.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#servicos" class="bg-brand text-black text-center px-8 py-4 rounded font-black uppercase tracking-widest hover:brightness-110 transition shadow-lg shadow-brand/20">Ver Serviços</a>
+                    <a href="#contato" class="border-2 border-white text-white text-center px-8 py-4 rounded font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Falar Connosco</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section id="empresa" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Consultoria Técnica" class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand -z-10 rounded-2xl opacity-20"></div>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-black text-black uppercase leading-none">Nossa <br><span class="text-brand">Empresa</span></h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        A LHG Consultoria conquistou a confiança dos seus clientes pela responsabilidade em cumprir as normas vigentes. Mais do que cumprir normas técnicas, temos o compromisso de orientar empresas e colaboradores sobre direitos e deveres, respeitando a individualidade de cada cliente.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
+                        <div class="space-y-2">
+                            <h3 class="text-brand font-black uppercase italic text-xl">Missão</h3>
+                            <p class="text-sm text-gray-500">Exercer diagnóstico com excelência, atendendo as exigências legais com responsabilidade e eficiência.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-brand font-black uppercase italic text-xl">Visão</h3>
+                            <p class="text-sm text-gray-500">Tornar-se referência em análise de processos produtivos, saúde e segurança e proteção ambiental.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Especializados -->
+    <section id="servicos" class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <span class="text-brand font-bold uppercase tracking-widest text-xs">O que fazemos</span>
+            <h2 class="text-4xl font-black mt-2 uppercase">Serviços <span class="text-brand">Especializados</span></h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-file-contract text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">PGR / GRO (NR-01)</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Gerenciamento de Riscos Ocupacionais focado na identificação e controlo de perigos no ambiente de trabalho.</p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-user-md text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">PCMSO (NR-07)</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Programa de Controlo Médico de Saúde Ocupacional para preservação da saúde dos trabalhadores.</p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-database text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">e-Social SST</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Gestão completa de envio dos eventos S-2210, S-2220 e S-2240 para o Governo Federal.</p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-fire-extinguisher text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">AVCB & CLCB</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Assessoria completa para obtenção e renovação de licenças junto ao Corpo de Bombeiros.</p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-balance-scale text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">Perícias Judiciais</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Assistência técnica em perícias de periculosidade e insalubridade com laudos precisos.</p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-xl border border-white/10 card-hover">
+                <i class="fas fa-leaf text-brand text-4xl mb-6"></i>
+                <h3 class="text-xl font-black mb-4 uppercase">LTCAT & PPP</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Documentação técnica obrigatória para fins previdenciários e aposentadoria especial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treinamentos -->
+    <section id="treinamentos" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-1/3">
+                <h2 class="text-4xl font-black uppercase leading-tight italic">Nossos <br><span class="text-brand">Treinamentos</span></h2>
+                <p class="mt-6 text-gray-600">Oferecemos treinamentos desenvolvidos para atender as necessidades específicas de diferentes setores, focados na prevenção real de acidentes.</p>
+                <div class="mt-8 border-l-8 border-brand">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Treinamento Equipa" class="rounded-r-lg shadow-xl">
+                </div>
+            </div>
+            <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-05</span> <span class="font-bold text-xs uppercase text-gray-600">CIPA / CIPATR</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-10</span> <span class="font-bold text-xs uppercase text-gray-600">Segurança Elétrica</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-11</span> <span class="font-bold text-xs uppercase text-gray-600">Empilhadeira / Hillo</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-12</span> <span class="font-bold text-xs uppercase text-gray-600">Máquinas e Equipamentos</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-20</span> <span class="font-bold text-xs uppercase text-gray-600">Inflamáveis</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-33</span> <span class="font-bold text-xs uppercase text-gray-600">Espaço Confinado</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">NR-35</span> <span class="font-bold text-xs uppercase text-gray-600">Trabalho em Altura</span>
+                </div>
+                <div class="p-4 bg-white shadow-sm rounded border-l-4 border-brand flex items-center gap-4 hover:bg-brand/5 transition">
+                    <span class="font-black text-brand text-xl">SIPAT</span> <span class="font-bold text-xs uppercase text-gray-600">Semana de Prevenção</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-black rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-brand/20">
+                <div class="lg:w-1/3 bg-brand p-12 text-black flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-black uppercase mb-8 italic">Contatos</h2>
+                        <ul class="space-y-6 font-bold text-sm">
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt mt-1"></i>
+                                <span>R. Maria Ducelina S. Betone, 125<br>Jd. Botânico, Pitangueiras-SP</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <i class="fas fa-envelope"></i>
+                                <span>luisgestao@yahoo.com.br</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>(16) 99350-8192 (Luis)</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>(16) 99210-4981 (Jessica)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-12">
+                         <!-- Logo fundido no fundo verde (multiply) -->
+                         <img src="https://lh3.googleusercontent.com/d/1lOWXl_pNFLY1TwWmv_eEAArttPSvMIHW" alt="LHG Logo" class="logo-blend-brand">
+                    </div>
+                </div>
+                <div class="lg:w-2/3 p-12 lg:p-16">
+                    <h3 class="text-2xl font-black text-white uppercase mb-8 italic">Solicite uma Proposta</h3>
+                    <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-white text-xs font-bold uppercase tracking-widest">Nome / Empresa</label>
+                            <input type="text" required class="w-full bg-white/5 border border-white/10 p-4 rounded text-white focus:border-brand outline-none transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-white text-xs font-bold uppercase tracking-widest">E-mail</label>
+                            <input type="email" required class="w-full bg-white/5 border border-white/10 p-4 rounded text-white focus:border-brand outline-none transition">
+                        </div>
+                        <div class="space-y-2 md:col-span-2">
+                            <label class="text-white text-xs font-bold uppercase tracking-widest">Serviço de Interesse</label>
+                            <select class="w-full bg-white/5 border border-white/10 p-4 rounded text-white focus:border-brand outline-none transition appearance-none">
+                                <option class="bg-black">PGR / GRO / SST</option>
+                                <option class="bg-black">Treinamentos NR</option>
+                                <option class="bg-black">Perícias / Laudos</option>
+                                <option class="bg-black">AVCB / Bombeiros</option>
+                                <option class="bg-black">Meio Ambiente</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2 md:col-span-2">
+                            <label class="text-white text-xs font-bold uppercase tracking-widest">Sua Mensagem</label>
+                            <textarea rows="4" required class="w-full bg-white/5 border border-white/10 p-4 rounded text-white focus:border-brand outline-none transition"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="w-full bg-brand text-black p-4 rounded font-black uppercase tracking-widest hover:brightness-110 transition">Enviar Agora</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <!-- Logo no footer fundido no preto -->
+                <img src="https://lh3.googleusercontent.com/d/1lOWXl_pNFLY1TwWmv_eEAArttPSvMIHW" alt="LHG Logo" class="logo-blend-dark mx-auto mb-4">
+                <p class="text-brand font-black tracking-widest uppercase">Engenharia e Segurança</p>
+            </div>
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">© 2026 LHG Consultoria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5516993508192" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
